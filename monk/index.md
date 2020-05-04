@@ -8,6 +8,9 @@ abilities, as well as a single offensive ability, "Flurry of Blows".
 At level 3 of the Monk class, you choose a subclass, each of which has
 unique features. We'll look at those subclasses here.
 
+To skip the process and go directly to the conclusions, go
+[here](bigpicture.md).
+
 ### Caveats
 
 We're not trying to determine which Monk subclass are "better". This is
@@ -214,7 +217,8 @@ settings times 3 combat lengths: each graph contains a single plot line
 for each subclass that models its average per-round combat damage over
 all the levels of its life.
 
-[Here](bigpicture.md) is a link to the final graph output.
+[Here](bigpicture.md) is a link to the final graph output, along with my
+conclusions.
 
 ## Future work
 
