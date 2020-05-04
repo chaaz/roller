@@ -1,7 +1,8 @@
 ## The Big Picture
 
 At the bottom of this page are all graphs we get from running the
-models. You can click on the image to view it at full size.
+models. You can click on the image to view it at full size, or
+right-click to download/save or view the image in a new tab.
 
 ### Conclusions
 
@@ -71,11 +72,12 @@ every round.
 
 ### Way of Mercy
 
-This Unearthed Arcana playtest content is fairly powerful damage-wise.
-It's particularly effective in this analysis, since it's granted the
-Poisoned and/or Incapacitated condition on its enemies. The Mercy Monk's
-bread-and-butter damage "Hands of Harm" feature does triple the damage
-it would otherwise do to Poisoned / Incapacitated foes.
+This Unearthed Arcana playtest content can be pretty powerful from a
+damage output perspective. It's particularly effective in this analysis,
+since it's granted the Poisoned and/or Incapacitated condition on its
+enemies. The Mercy Monk's bread-and-butter damage feature "Hands of
+Harm" does triple the damage it would otherwise do to Poisoned /
+Incapacitated foes.
 
 While both Poisoned and Incapacitated can be bestowed by the Monk itself
 (Noxious Aura at level 6, and Stunning Strike at level 5), doing so
@@ -142,7 +144,7 @@ damage.
 
 ### Way of the Astral Self
 
-This is the last Unearthed Arcana playtest material, and a big departure
+This is also Unearthed Arcana playtest material, and a big departure
 from other Monk subclasses: not only does it mechanically encourage
 building a Wis/Dex monk (vs most other monks which are Dex/Wis), but it
 also seems to encourage eschewing using "Flurry of Blows" for an
