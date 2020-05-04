@@ -1,8 +1,6 @@
 ## The Monk: The Big Picture
 
-At the bottom of this page are all graphs we get from running the
-models. You can click on the image to view it at full size, or
-right-click to download/save or view the image in a new tab.
+Download all graphs [here](assets/bigpicture.png).
 
 To read about how we modelled damage and arrived at our conclusions,
 read [this](index.md).
@@ -228,4 +226,3 @@ level 17 "Touch of the Long Death", which we could probably model fairly
 easily. **2d10** per ki is actually pretty efficient compared to other
 subclass features.
 
-![Big picture](assets/bigpicture.png)
