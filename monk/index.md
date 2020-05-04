@@ -1,106 +1,111 @@
 ## The Monk
 
 The Monk is a fairly interesting class: one of the four martial
-characters in the original Player's Handbook, it uses a pseudo-magical
+characters in the original Player's Handbook, it uses a magic-like
 resource named "ki" to fuel it's defensive, mobility, and crowd-control
-abilities, as well as a single offensive ability, "Flurry of Blows",
-which lets you perform two unarmed strikes as a bonus action at level 2.
+abilities, as well as a single offensive ability, "Flurry of Blows".
 
-At level 3 of the Monk class, you choose a subclass. Some subclasses add
-spending ki to improve its offensive capabilities. I'll look at those
-here.
+At level 3 of the Monk class, you choose a subclass, each of which has
+unique features. We'll look at those subclasses here.
 
 ### Caveats
 
-I'm not trying to determine which Monk subclass is "better" (whatever
-that means). This is simply a model analysis of the subclasses' damage
-output and damage strategies at various levels in order to get a feel
-for what the subclass can do in combat. This analysis doesn't touch the
-role playing, exploration, social, or skill challenge aspects of the
+We're not trying to determine which Monk subclass are "better". This is
+simply an analysis of the subclasses' potential damage output to get a
+feel for what each subclass can do in combat. This analysis doesn't
+touch the role playing, exploration, social, or skill aspects of any
 class.
 
 Even within combat, this analysis only address damage output, and says
-nothing about possible non-damage goals of combat; if you're fighting as
-a delaying tactic, an escort mission, or to impress a noble, damage
-might not be that important. It doesn't model damage _input_, which is
-usually important to a Monk, which only has **d8** hit dice. It's
-doesn't look at tactics or non-damage effects, which can often have a
-bigger effect on combat success than raw damage.
+nothing about any non-damage goals of combat; if you're fighting as a
+delaying tactic, an escort mission, or to impress a noble, damage might
+not be that important. It also doesn't track damage _input_, which is
+important to the **d8** hit-dice Monk. It doesn't look at tactics or
+non-damage effects, which can be a bigger factor than raw damage.
 
-Finally, even damage output might not be match a real table. The world
-and enemies are considered to have fixed properties, and the strategy
-for dealing is to do the most damage at any moment. Assumptions about
-terrain, mobility, lighting, enemy types, party are all static and
-simple. We shouldn't think of the modeling here as being representative,
-but rather as merely indicative of what kind of damage is possible.
+Finally, the numbers presented here might not match what you'd see in a
+real game. In our simple model, the world and enemies have fixed
+properties, and our character tactics are basic; an actual game is fluid
+and nuanced, with unpredictable turns that can drastically change any
+outcome. We shouldn't think of the modeling here as being
+representative, but rather as merely indicative of what is possible.
 
 ### Model
 
 #### Description
 
-I modeled simplified multiple round combats, where a character performs
-actions on each round, which may result in some damage done to an enemy.
-Specific enemy characters are not tracked; only a generic AC, saving
-throw, and effectively infinite pool of HP is considered. Enemies don't
-take actions, except saving throws where appropriate.
+We model simplified multi-round combats, where a Monk character performs
+actions on each round, some of which may result in some damage done to
+an enemy. Specific enemy characters are not tracked; only a generic AC,
+saving throw, and damage done to an enemy; death and overkill is not
+tracked. Enemies don't take actions except for the occasional saving
+throw.
 
-Character resources, such as per-turn and per-rest resources are
+Character resources, such as per-turn and per-rest resources _are_
 tracked. For the Monk, this usually comes down to tracking **ki** and
-specific abilities that are specified as once or more per turn. Each
-combat begins with a fully-rested character; depletion is (somewhat)
-modelled using longer combats.
+features that have limited use per turn. Each combat begins with a
+fully-rested character; resource depletion for the characters is not
+examined, but can be partially seen in the effects for long combats.
 
 Features that can only be used under specific conditions, such as
-on-hit, on-miss, or by taking a specific action or bonus action are
-tracked, including actions that can only be done with a specific type of
-attack (weapon, unarmed, etc).
+on-hit, on-miss, or by taking a specific action or bonus action are also
+tracked, including actions that can only be done in conjunction with a
+specific type of attack (weapon, unarmed, etc).
+
+Resolutions are resolved by a random numbers, just as they are in a real
+game. Once the combat is complete, total damage output from the Monk for
+that round is tallied, and the damage/round is calculated. Typically,
+1000 combats are run and averaged for each data point. With 6
+subclasses, 20 levels, 5 difficulty settings, and 3 combat lengths, a
+total of 1.8 million combats are simulated to find our results.
 
 #### Features
 
-I only modeled features that have a direct impact on damage. This
+We model only class features that have a direct impact on damage. This
 includes the following:
 
-- _Monk_ base class ("monk"):
+- _Monk_ base class ("Monk"):
   - Martial Arts
   - Ki (resource and "Flurry of Blows")
   - Monastic Tradition (compared)
   - Ability Score Improvement (see "Assumptions" below)
   - Extra Attack
 
-- _Way of the Astral Self_ subclass ("astral"):
+- _Way of the Astral Self_ ("Astral Monk"):
   - Arms of the Astral Self (Wisdom substitution and bonus attacks)
   - Awakening of the Astral Self (Empowered Arms)
   - Complete Astral Self (Astral Barrage)
 
-- _Way of the Argent Fist_ (from Morgrave Miscellany) ("argent")
+- _Way of the Argent Fist_ from Morgrave Miscellany ("Argent Monk")
   - Wrath of the Argent
   - Radiant Embrace (expanded critical range)
 
-- _Way of the Kensei_ subclass ("kensei")
-  - Path of the Kensei (Kensei weapon: longsword)
+- _Way of the Kensei_ ("Kensei Monk")
+  - Path of the Kensei (using a Kensei weapon: longsword)
   - One with the Blade (Deft Strike)
   - Sharpen the Blade
   - Unerring Accuracy
 
-- _Way of Mercy_ subclass ("mercy")
+- _Way of Mercy_ ("Mercy Monk")
   - Hands of Harm
   - Noxious Aura (aura damage, 1 creature)
 
-- _Way of Shadow_ subclass ("shadow")
+- _Way of Shadow_ ("Shadow Monk")
   - Opportunist
 
-- _Way of the Drunken Master_
-  - _TODO_
+- _Way of the Drunken Master_ (not included)
 
-- _Way of the Four Elements_
-  - _TODO_
+- _Way of the Four Elements_ (not included)
 
-- _Way of the Long Death_
-  - _TODO_
+- _Way of the Long Death_ (not included)
 
 #### Assumptions
 
-I modeled a primary / secondary stat Monk with the following modifiers:
+We model the primary / secondary Monk abilities with the following
+modifiers. This is typical of a point-buy or basic array Monk creation
+for races that have a good ability synergy, and where the Ability Score
+Improvement (ASI) at levels 4, 8, 12, and 16 are used to improve the
+Monk's primary, and then secondary abilities.
   - Level 1: 3 / 2
   - Level 4: 4 / 3
   - Level 8: 5 / 3
@@ -109,38 +114,42 @@ I modeled a primary / secondary stat Monk with the following modifiers:
 
 Most subclasses use **Dexterity** / **Wisdom** for these stats, but the
 Astral Monk has those reversed: **Wisdom** / **Dexterity**, since the
-flavor and mechanics of that subclass seems to push for a stronger
-wisdom focus.
+flavor and mechanics of that subclass seem to push for a stronger wisdom
+focus.
 
-Generally speaking, for situations where damage can be optimized by the
-actions of the party, I assume that these optimizations are available.
-For example, I generously assume the enemy is poisoned or incapacitated
-for the Mercy Monk's "Hands of Harm" feature, and that it is within
-range of her "Noxious Aura" feature. Shadow Monks always get their
-"Opportunist" reaction, and Kensei monks always fight with a longsword.
+For situations where damage can be optimized by the actions of the
+party, we generally assume that these are granted. As examples, we
+generously assume the enemy is poisoned or incapacitated for the Mercy
+Monk's "Hands of Harm" feature, and that one enemy is within range of
+her "Noxious Aura". Shadow Monks always get their "Opportunist"
+reaction, and Kensei monks always fight with a longsword.
 
 The exception to this rule is that monks never get opportunity attacks.
-This is done to provide a stark contrast to the Opportunist feature,
-which is basically an easier-to-obtain version of an opportunity attack.
+This is done to provide a contrast to the "Opportunist" feature, which
+is damage-wise an easier-to-obtain version of an opportunity attack.
 
 On the other side, situations which are largely out of the party's hands
-are not granted. So, for example, the Argent Monk doesn't get double
-Wrath damage from attacking undead, and the Shadow Monk can't teleport
+are **not** granted. So the Argent Monk doesn't get double "Wrath of the
+Argent" damage from attacking undead, and the Shadow Monk can't teleport
 and get advantage on every round.
 
-I assume that the monk goes first every round; this doesn't affect much,
-except that it adds an some points of "Noxious Aura" damage at the end
-of the last round.
+In our program the monk goes first every round; this doesn't affect
+much, except that it adds an some points of "Noxious Aura" damage at the
+end of the last round.
 
 #### Tactics
 
-The Monk tactics modelled here are simple:
+The Monk tactics in this analysis are very simple:
 
 - On the first round, if they can use some feature that provides a bonus
   to damage or change to hit, they use that feature first. This includes
   things like the Kensei Monk's "Sharpen the Blade" or the Mercy Monk's
   "Noxious Aura".
-- They'll make an Attack action, making the maximum number of attacks.
+- If possible, they'll make an Attack action, making the maximum number
+  of attacks. Kensei Monks use a versatile longsword (**1d10**) for this
+  attack, and Astral Monks use their arm weapon. All other monks use a
+  versatile quarterstaff (**1d8**) until level 11, when their unarmed
+  strike damage catches up.
 - If they can, they'll spend a ki point and make a "Flurry of Blows"
   attack as a bonus action.
   - Exception: at level 3 and higher, the Astral Monk uses the bonus
@@ -153,67 +162,50 @@ The Monk tactics modelled here are simple:
   includes the "Opportunist" reaction, as well as on-hit abilities like
   "Deft Strike" or "Hands of Harm".
 
-With regards to weapons, I modeled that attacks made with the Attack
-action are done with a non-magical quarterstaff in its "versatile" mode,
-which does **1d8** base damage; it's generally accepted that a monk can
-do this and still use her unarmed "Flurry of Blows" or "Martial Arts"
-bonus attack. This is done until the monk can equal **1d8** damage with
-her own unarmed strikes at level 11, at which point unarmed strikes are
-used for all attacks. The exceptions to this is that the Astral Monk
-always uses her "Arms of the Astral Self" weapon starting at level 3 for
-all attacks, and the Kensei monk uses a longsword (also in its
-"versatile" mode) for her Attack action from levels 3-20.
-
 ### Variables
 
-There are four main variables that are modelled:
+There are four input variables that are modelled:
 
-**Subclass:** The subclass which the Monk chooses. I currently have 5
-subclasses (Argent, Astral, Kensei, Mercy, and Shadow) in the model, as
-well as a "Pure" monk (that doesn't use any subclass features) for
-comparison.
+**Subclass:** We currently have 5 subclasses (Argent, Astral, Kensei,
+Mercy, and Shadow) in the model, as well as a "pure" monk (that doesn't
+use any subclass features) for comparison.
 
-**Class Level:** The monk class level at which the combat occurs. I
-model all levels 1-20 for all subclasses.
+**Class Level:** We model all levels 1-20 for all subclasses.
 
-**Difficulty:** I represent the difficulty with a number 0-20, and
-include 5 difficulty settings in the model:
-  - At difficulty 0, the Monk's attacks always hit, and enemies never
-    make their saving throw. ("Noxious Aura" damage is the only feature
-    modeled so far that uses an enemy's saving throw).
-  - At difficulty 5, the Monk hits with a natural d20 roll of 5 or
-    greater, and enemies save with a natural d20 roll of 16 or greater.
-  - At difficulty 10, the Monk hits with a natural d20 roll of 10 or
-    greater, and enemies save with a natural d20 roll of 11 or greater.
-  - At difficulty 15, the Monk hits with a natural d20 roll of 15 or
-    greater, and enemies save with a natural d20 roll of 6 or greater.
-  - At difficulty 20, the Monk hits with a natural d20 roll of 20, and
-    enemies always make their saving throw.
+**Difficulty:** We represent the difficulty setting (**DS**) with a
+number 0-20, and include 5 such settings in our analysis: 0, 5, 10, 15,
+and 20. This is used to simulate the strength of enemy creatures that a
+monk might find at their respective levels. The DS affects enemy AC and
+saving throws ("Noxious Aura" damage is the only feature modeled so far
+that uses an enemy's saving throw).
 
-At difficulty 5 and higher, enemies are scaled: their AC and saving
-throws are adjusted against the Monk's primary stat and proficiency
-bonus, so that the "natural roll" statements remain true at all Monk
-class levels. This scaling tries model the relative strength of enemies
-typically encountered at their respective class levels. Other class
-features which raise or lower the Monk's chance to hit or DC of their
-features are not included to enemy scaling. So, for example, a Kensei
-Monk that uses "Sharpen the Blade" would have a better chance of hitting
-the enemy than one who does not (all else being equal).
+  - The enemy AC is equal to
+    ```
+    (Monk's primary mod) + (Monk's prof. bonus) + DS
+    ```
+    This means that most Monks will require to roll on the d20 equal to
+    the DS to hit the enemy.
+  - Enemies receive a bonus to their saving throw equal to
+    ```
+    (Monk's secondary mod) + (Monk's prof. bonus) + DS - 13
+    ```
+    So, enemies will make their saving throw against most Monks if they
+    roll a `(21 - DS)` on the d20. (They'll need to roll an 11 at DS 10,
+    a 6 at DS 15, etc.)
+  - At **DS 0**, Monk attacks always hit, and enemies never make their
+    saving throw, regardless of any other factor.
 
-**Combat Length:** I included three different combat lengths: 1 round, 5
-rounds, and 10 rounds of combat. I found that the typical length of
-combat in a real game is around 4-6 rounds, so a 1-round combat is
-short, while a combat that stretches out to 10 rounds is quite long. The
-Monk's tactics are unchanged regardless of combat length, which is
-especially unlikely in a real game. For this reason "combat length"
-might be more useful as an indicator of early, mid, and late-combat
-effectiveness; 10-round combat results might also be an indicator of how
-a Monk performs when it's resources start to become depleted.
+**Combat Length:** Our analysis includes three different combat lengths:
+1 round, 5 rounds, and 10 rounds of combat. The typical combat in my
+games runs around 4-6 rounds, so a 1-round combat is short, while a
+combat that stretches out to 10 rounds is quite long. Most players will
+gauge how long a combat might take at the outset, and adjust their
+tactics accordingly. However, in the analysis presented here, the Monk's
+tactics are unaffected by combat length.
 
-Combat lengths longer than 10 rounds are not modelled; very long combats
-usually have a much different set of actions and tactics at the table
-which are hard to model. Also, a number of activated features might
-expire mid-combat in such situations, which is hard to model.
+Combat lengths longer than 10 rounds are not modelled, mostly because we
+don't yet have a way to track the expiration of activated features, and
+haven't written tactics for dealing with them.
 
 ### Output
 
@@ -221,6 +213,8 @@ I present the model here as a set of 15 graphs for the 5 difficulty
 settings times 3 combat lengths: each graph contains a single plot line
 for each subclass that models its average per-round combat damage over
 all the levels of its life.
+
+[Here](bigpicture.md) is a link to the final graph output.
 
 ## Future work
 
@@ -230,10 +224,10 @@ class features provide spell or spell-like abilities, which are
 difficult to model because their damage is highly situational, but we
 can probably make some baseline assumptions.
 
-We also like to model different situations: what happens if the Mercy
+We'd also like to model different situations: what happens if the Mercy
 Monk doesn't always get their triple dice from "Hands of Harm"? What if
 we include opportunity attacks in the model?
 
 Finally, we'd like to play with different tactics. While we can never
-include the wide range of tactics available to an experienced player, we
-can probably make our Monks slightly more intelligent.
+include the wide range of strategies available to an experienced player,
+we can probably make our Monk programs somewhat more intelligent.
