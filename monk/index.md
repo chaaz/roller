@@ -1,4 +1,4 @@
-## The Monk
+## The Monk: The Process
 
 The Monk is a fairly interesting class: one of the four martial
 characters in the original Player's Handbook, it uses a magic-like

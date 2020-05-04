@@ -1,8 +1,11 @@
-## The Big Picture
+## The Monk: The Big Picture
 
 At the bottom of this page are all graphs we get from running the
 models. You can click on the image to view it at full size, or
 right-click to download/save or view the image in a new tab.
+
+To read about how we modelled damage and arrived at our conclusions,
+read [this](index.md).
 
 ### Conclusions
 
